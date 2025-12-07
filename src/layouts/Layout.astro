@@ -1,0 +1,26 @@
+---
+import '../styles/global.css'
+
+export interface Props {
+  title?: string
+  description?: string
+}
+
+const {
+  title = 'Astro Template',
+  description = 'Starter for Astro + React + Tailwind',
+}: Props = Astro.props
+---
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-slate-950 text-slate-50 min-h-screen antialiased selection:bg-cyan-400/40 selection:text-slate-950">
+    <main class="min-h-screen">
+      <slot />
+    </main>
+  </body>
+</html>
